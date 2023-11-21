@@ -8,23 +8,26 @@
     <script src="./js/script.js" defer></script>
 </head>
 <body>
-    <div>
-        <p id="yourScore">Your score: 0</p>
-        <p id="aiScore">Computers score: 0</p>
+    <div class="hidden">
+        <p id="yourPoints">Your score: 0</p>
+        <p id="aiPoints">Computers score: 0</p>
     </div>
     <div>
         <h1>RPS Battle</h1>
         <p>Enter your name</p>
         <input id="name" type="text" placeholder="Name">
-        <button onclick="returnPlayerName()">Submit</button>
+        <button id="submit">Submit</button>
     </div>
-    <div>
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+    <div class="hidden" id="game">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
     </div>
-    <div>
-        <h2>Round results</h2>
+    <div class="hidden">
+        <h2 id="results">Round results</h2>
     </div>
+    <form action="">
+        <button class="hidden">Reset</button>
+    </form>
 </body>
 </html>
