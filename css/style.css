@@ -4,6 +4,30 @@
     box-sizing: border-box;
 }
 
+div {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 1rem;
+}
+
+h1 {
+    margin: 8rem 0 2rem 0;
+}
+
+#score {
+    justify-content: space-between;
+    margin: 4rem 3rem 2rem 3rem;
+    font-size: 20px;
+}
+
 .hidden {
     display: none;
+}
+
+.alignCenter {
+    align-items: center;
+    flex-direction: column;
 }

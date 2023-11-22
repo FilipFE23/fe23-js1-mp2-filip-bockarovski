@@ -8,15 +8,17 @@
     <script src="./js/script.js" defer></script>
 </head>
 <body>
-    <div class="hidden">
+    <div class="hidden" id="score">
         <p id="yourPoints">Your score: 0</p>
         <p id="aiPoints">Computers score: 0</p>
     </div>
     <div>
-        <h1>RPS Battle</h1>
-        <p>Enter your name</p>
-        <input id="name" type="text" placeholder="Name">
-        <button id="submit">Submit</button>
+        <div class="alignCenter">
+            <h1>RPS Battle</h1>
+            <p>Enter your name</p>
+            <input id="name" type="text" placeholder="Name">
+            <button id="submit">Start</button>
+        </div>
     </div>
     <div class="hidden" id="game">
         <button id="rock">Rock</button>
@@ -24,10 +26,12 @@
         <button id="scissors">Scissors</button>
     </div>
     <div class="hidden">
-        <h2 id="results">Round results</h2>
+        <h2 id="results"></h2>
     </div>
-    <form action="">
-        <button class="hidden">Reset</button>
-    </form>
+    <div>
+        <form action="">
+            <button class="hidden">Reset</button>
+        </form>
+    </div>
 </body>
 </html>
