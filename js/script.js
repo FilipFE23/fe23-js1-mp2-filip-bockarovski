@@ -12,6 +12,7 @@ let playerName;
 
 let gameDiv = document.getElementById('game');
 let results = document.getElementById('results');
+let gameChoice = ['rock', 'paper', 'scissors']
 
 submitBtn.addEventListener('submit', (e)=>{
     let showEl = document.getElementsByClassName('hidden');
@@ -34,59 +35,22 @@ submitBtn.addEventListener('submit', (e)=>{
 gameDiv.addEventListener('click', (e)=>{
     let randomNumber = Math.floor(Math.random()*3);
     let showEl = document.getElementsByClassName('hidden')
-    if(e.target.id == 'rock'){
-        if(randomNumber === 0){
-            results.innerText = 'You chose rock and the computer chose rock so it is a draw!';
-            results.style.color = 'black';
-        }
-        else if(randomNumber === 1){
-            aiScore++;
-            results.innerText = 'You chose rock and the computer chose paper giving it a point!';
-            results.style.color = 'red';
-            aiDisplay.innerText = `Computers score: ${aiScore}`;
-        }
-        else if(randomNumber === 2){
-            yourScore++;
-            results.innerText = 'You chose rock and the computer chose scissors giving you a point!';
-            results.style.color = 'green';
-            playerDisplay.innerText = `${playerName}s score: ${yourScore}`;
-        }
+
+    if(e.target.id == 'rock' && randomNumber === 0 || e.target.id == 'paper' && randomNumber === 1 || e.target.id == 'scissors' && randomNumber === 2){
+        results.innerText = `You chose ${e.target.id} and the computer chose ${gameChoice[randomNumber]} so it is a draw!`;
+        results.style.color = 'black';
     }
-    else if(e.target.id == 'paper'){
-        if(randomNumber === 0){
-            yourScore++;
-            results.innerText = 'You chose paper and the computer chose rock giving you a point!';
-            results.style.color = 'green';
-            playerDisplay.innerText = `${playerName}s score: ${yourScore}`;
-        }
-        else if(randomNumber === 1){
-            results.innerText = 'You chose paper and the computer chose paper so it is a draw!';
-            results.style.color = 'black';
-        }
-        else if(randomNumber === 2){
-            aiScore++;
-            results.innerText = 'You chose paper and the computer chose scissors giving it a point!';
-            results.style.color = 'red';
-            aiDisplay.innerText = `Computers score: ${aiScore}`;
-        }
+    else if(e.target.id == 'rock' && randomNumber === 2 || e.target.id == 'paper' && randomNumber === 0 || e.target.id == 'scissors' && randomNumber === 1){
+        yourScore++;
+        results.innerText = `You chose ${e.target.id} and the computer chose ${gameChoice[randomNumber]} so you won a point!`;
+        results.style.color = 'green';
+        playerDisplay.innerText = `${playerName}s score: ${yourScore}`;
     }
-    else if(e.target.id == 'scissors'){
-        if(randomNumber === 0){
-            aiScore++;
-            results.innerText = 'You chose scissors and the computer chose rock giving it a point!';
-            results.style.color = 'red';
-            aiDisplay.innerText = `Computers score: ${aiScore}`;
-        }
-        else if(randomNumber === 1){
-            yourScore++;
-            results.innerText = 'You chose scissors and the computer chose paper giving you a point!';
-            results.style.color = 'green';
-            playerDisplay.innerText = `${playerName}s score: ${yourScore}`;
-        }
-        else if(randomNumber === 2){
-            results.innerText = 'You chose scissors and the computer chose scissors so it is a draw!';
-            results.style.color = 'black';
-        };
+    else if(e.target.id == 'rock' && randomNumber === 1 || e.target.id == 'paper' && randomNumber === 2 || e.target.id == 'scissors' && randomNumber === 0){
+        aiScore++;
+        results.innerText = `You chose ${e.target.id} and the computer chose ${gameChoice[randomNumber]} so the computer won a point!`;
+        results.style.color = 'red';
+        aiDisplay.innerText = `Computers score: ${aiScore}`;
     };
 
     if(yourScore === 3){
