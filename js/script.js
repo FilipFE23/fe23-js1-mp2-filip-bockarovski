@@ -13,9 +13,9 @@ let playerName;
 let gameDiv = document.getElementById('game');
 let results = document.getElementById('results');
 let gameChoice = ['rock', 'paper', 'scissors']
+let showEl = document.getElementsByClassName('hidden')
 
 submitBtn.addEventListener('submit', (e)=>{
-    let showEl = document.getElementsByClassName('hidden');
     e.preventDefault();
 
     playerName = document.getElementById('name').value;
@@ -34,7 +34,6 @@ submitBtn.addEventListener('submit', (e)=>{
 
 gameDiv.addEventListener('click', (e)=>{
     let randomNumber = Math.floor(Math.random()*3);
-    let showEl = document.getElementsByClassName('hidden')
 
     if(e.target.id == 'rock' && randomNumber === 0 || e.target.id == 'paper' && randomNumber === 1 || e.target.id == 'scissors' && randomNumber === 2){
         results.innerText = `You chose ${e.target.id} and the computer chose ${gameChoice[randomNumber]} so it is a draw!`;
