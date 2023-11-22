@@ -13,8 +13,9 @@ let playerName;
 let gameDiv = document.getElementById('game');
 let results = document.getElementById('results');
 
-submitBtn.addEventListener('click', ()=>{
+submitBtn.addEventListener('submit', (e)=>{
     let showEl = document.getElementsByClassName('hidden');
+    e.preventDefault();
 
     playerName = document.getElementById('name').value;
     playerDisplay.innerText = `${playerName}s score: ${yourScore}`;

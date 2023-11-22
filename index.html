@@ -16,8 +16,10 @@
         <div class="alignCenter">
             <h1>RPS Battle</h1>
             <p>Enter your name</p>
-            <input id="name" type="text" placeholder="Name">
-            <button id="submit">Start</button>
+            <form id="submit" action="">
+                <input id="name" type="text" placeholder="Name" minlength="1" maxlength="16" required>
+                <button>Start</button>
+            </form>
         </div>
     </div>
     <div class="hidden" id="game">
